@@ -68,7 +68,7 @@ cpdefine("inline:com-chilipeppr-dev-workspace", ["chilipeppr_ready"], function()
                 setTimeout(function() { $(window).trigger('resize'); }, 100);
             });
             
-            this.loadTemplateWidget();
+            this.loadMeshesWidget();
             
             // Create our workspace upper right corner triangle menu
             this.loadWorkspaceMenu();
@@ -116,23 +116,23 @@ cpdefine("inline:com-chilipeppr-dev-workspace", ["chilipeppr_ready"], function()
             if (this.widgetConsole) this.widgetConsole.resize();
         },
         /**
-         * Load the Template widget via chilipeppr.load() so folks have a sample
+         * Load the Meshes widget via chilipeppr.load() so folks have a sample
          * widget they can fork as a starting point for their own.
          */
-        loadTemplateWidget: function(callback) {
+        loadMeshesWidget: function(callback) {
 
             chilipeppr.load(
-                "#com-chilipeppr-widget-template-instance",
-                "http://raw.githubusercontent.com/chilipeppr/widget-template/master/auto-generated-widget.html",
+                "#myDivChOnlfaitChilipepprMeshesWidget",
+                "http://raw.githubusercontent.com/lautr3k/chilipeppr-meshes-widget/master/auto-generated-widget.html",
                 function() {
-                    // Callback after widget loaded into #myDivWidgetTemplate
+                    // Callback after widget loaded into #myDivChOnlfaitChilipepprMeshesWidget
                     // Now use require.js to get reference to instantiated widget
                     cprequire(
-                        ["inline:com-chilipeppr-widget-template"], // the id you gave your widget
-                        function(myObjWidgetTemplate) {
+                        ["inline:ch-onlfait-chilipeppr-meshes-widget"], // the id you gave your widget
+                        function(myObjChOnlfaitChilipepprMeshesWidget) {
                             // Callback that is passed reference to the newly loaded widget
-                            console.log("Widget / Template just got loaded.", myObjWidgetTemplate);
-                            myObjWidgetTemplate.init();
+                            console.log("Meshes widget. just got loaded.", myObjChOnlfaitChilipepprMeshesWidget);
+                            myObjChOnlfaitChilipepprMeshesWidget.init();
                         }
                     );
                 }
