@@ -91,7 +91,7 @@
     <script type='text/javascript'>
     //<![CDATA[
 /* global cpdefine chilipeppr cprequire */
-cprequire_test(["inline:com-chilipeppr-workspace-dev"], function(ws) {
+cprequire_test(["inline:com-chilipeppr-dev-workspace"], function(ws) {
 
     console.log("initting workspace");
 
@@ -125,12 +125,12 @@ cprequire_test(["inline:com-chilipeppr-workspace-dev"], function(ws) {
 } /*end_test*/ );
 
 // This is the main definition of your widget. Give it a unique name.
-cpdefine("inline:com-chilipeppr-workspace-dev", ["chilipeppr_ready"], function() {
+cpdefine("inline:com-chilipeppr-dev-workspace", ["chilipeppr_ready"], function() {
     return {
         /**
          * The ID of the widget. You must define this and make it unique.
          */
-        id: "com-chilipeppr-workspace-dev", // Make the id the same as the cpdefine id
+        id: "com-chilipeppr-dev-workspace", // Make the id the same as the cpdefine id
         name: "Workspace / Dev.", // The descriptive name of your widget.
         desc: `A ChiliPeppr Dev. Workspace.`,
         url: "http://raw.githubusercontent.com/lautr3k/chilipeppr-dev-workspace/master/auto-generated-workspace.html", // The final URL of the working widget as a single HTML file with CSS and Javascript inlined. You can let runme.js auto fill this if you are using Cloud9.
@@ -330,7 +330,7 @@ cpdefine("inline:com-chilipeppr-workspace-dev", ["chilipeppr_ready"], function()
 
     <div id="com-chilipeppr-widget-flash-instance"></div>
 
-    <div id="com-chilipeppr-workspace-dev" class="xhidden">
+    <div id="com-chilipeppr-dev-workspace" class="xhidden">
 
         <div class="container-fluid">
             <div class="row">
@@ -403,7 +403,7 @@ cpdefine("inline:com-chilipeppr-workspace-dev", ["chilipeppr_ready"], function()
     </div>
 
     <!-- Keep this div hidden so it can be cloned and used by the Javascript -->
-    <div id="com-chilipeppr-workspace-dev-billboard" class="hidden">
+    <div id="com-chilipeppr-dev-workspace-billboard" class="hidden">
         <div class="billboard-content">
             <h4 class="billboard-title" style="">Dev. Workspace</h4>
 
@@ -412,7 +412,7 @@ cpdefine("inline:com-chilipeppr-workspace-dev", ["chilipeppr_ready"], function()
             </p>
             <div class="billboard-imgcontain" style="">
                 <a href="http://chilipeppr.com/sample">
-                    <div class="billboard-img" style="background-image: url('https://github.com/chilipeppr/workspace-dev/raw/master/billboard.png')" />
+                    <div class="billboard-img" style="background-image: url('https://github.com/chilipeppr/dev-workspace/raw/master/billboard.png')" />
                 </a>
                 <div class="billboard-stats2">
                 </div>

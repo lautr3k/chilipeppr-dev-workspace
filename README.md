@@ -1,4 +1,4 @@
-# com-chilipeppr-workspace-dev
+# com-chilipeppr-dev-workspace
 A ChiliPeppr Dev. Workspace.
 
 ![alt text](screenshot.png "Screenshot")
@@ -11,7 +11,7 @@ not conflict with other ChiliPeppr objects.
 
 | Item                  | Value           |
 | -------------         | ------------- | 
-| ID                    | com-chilipeppr-workspace-dev |
+| ID                    | com-chilipeppr-dev-workspace |
 | Name                  | Workspace / Dev. |
 | Description           | A ChiliPeppr Dev. Workspace. |
 | chilipeppr.load() URL | http://raw.githubusercontent.com/lautr3k/chilipeppr-dev-workspace/master/auto-generated-workspace.html |
@@ -39,11 +39,11 @@ chilipeppr.load(
     // Callback after workspace loaded into #pnlWorkspace
     // Now use require.js to get reference to instantiated workspace
     cprequire(
-      ["inline:com-chilipeppr-workspace-dev"], // the id you gave your workspace
-      function(myWorkspaceDev) {
+      ["inline:com-chilipeppr-dev-workspace"], // the id you gave your workspace
+      function(myDevWorkspace) {
         // Callback that is passed reference to the newly loaded workspace
-        console.log("Workspace / Dev. just got loaded.", myWorkspaceDev);
-        myWorkspaceDev.init();
+        console.log("Workspace / Dev. just got loaded.", myDevWorkspace);
+        myDevWorkspace.init();
       }
     );
   }
@@ -135,7 +135,7 @@ The table below shows, in order, the methods and properties inside the workspace
           </tr>
       </thead>
       <tbody>
-      <tr valign="top"><td>id</td><td>string</td><td>"com-chilipeppr-workspace-dev"<br><br>The ID of the widget. You must define this and make it unique.</td></tr><tr valign="top"><td>name</td><td>string</td><td>"Workspace / Dev."</td></tr><tr valign="top"><td>desc</td><td>string</td><td>"A ChiliPeppr Dev. Workspace."</td></tr><tr valign="top"><td>url</td><td>string</td><td>"http://raw.githubusercontent.com/lautr3k/chilipeppr-dev-workspace/master/auto-generated-workspace.html"</td></tr><tr valign="top"><td>fiddleurl</td><td>string</td><td>"http://ide.c9.io/lautr3k/chilipeppr-dev-workspace"</td></tr><tr valign="top"><td>githuburl</td><td>string</td><td>"http://github.com/lautr3k/chilipeppr-dev-workspace"</td></tr><tr valign="top"><td>testurl</td><td>string</td><td>"http://chilipeppr-dev-workspace-lautr3k.c9users.io/workspace.html"</td></tr><tr valign="top"><td>widgetConsole</td><td>object</td><td>Contains reference to the Console widget object. Hang onto the reference
+      <tr valign="top"><td>id</td><td>string</td><td>"com-chilipeppr-dev-workspace"<br><br>The ID of the widget. You must define this and make it unique.</td></tr><tr valign="top"><td>name</td><td>string</td><td>"Workspace / Dev."</td></tr><tr valign="top"><td>desc</td><td>string</td><td>"A ChiliPeppr Dev. Workspace."</td></tr><tr valign="top"><td>url</td><td>string</td><td>"http://raw.githubusercontent.com/lautr3k/chilipeppr-dev-workspace/master/auto-generated-workspace.html"</td></tr><tr valign="top"><td>fiddleurl</td><td>string</td><td>"http://ide.c9.io/lautr3k/chilipeppr-dev-workspace"</td></tr><tr valign="top"><td>githuburl</td><td>string</td><td>"http://github.com/lautr3k/chilipeppr-dev-workspace"</td></tr><tr valign="top"><td>testurl</td><td>string</td><td>"http://chilipeppr-dev-workspace-lautr3k.c9users.io/workspace.html"</td></tr><tr valign="top"><td>widgetConsole</td><td>object</td><td>Contains reference to the Console widget object. Hang onto the reference
 so we can resize it when the window resizes because we want it to manually
 resize to fill the height of the browser so it looks clean.</td></tr><tr valign="top"><td>widgetSpjs</td><td>object</td><td>Contains reference to the Serial Port JSON Server object.</td></tr><tr valign="top"><td>init</td><td>function</td><td>function () <br><br>The workspace's init method. It loads the all the widgets contained in the workspace
 and inits them.</td></tr><tr valign="top"><td>getBillboard</td><td>function</td><td>function () <br><br>Returns the billboard HTML, CSS, and Javascript for this Workspace. The billboard
