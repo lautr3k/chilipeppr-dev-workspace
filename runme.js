@@ -1327,7 +1327,7 @@ var getMainPage = function() {
   //html += '<br><br>Just pushed updates to your Github repo.';
   
   var jsLoad = generateCpLoadStmt();
-  html += '<br><br>Sample chilipeppr.load() Javascript for Your Workspace\n<pre>' +
+  html += '<br><br>Dev. chilipeppr.load() Javascript for Your Workspace\n<pre>' +
     jsLoad +
     '</pre>\n';
     
