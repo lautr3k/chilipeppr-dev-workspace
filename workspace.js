@@ -60,7 +60,8 @@ cpdefine("inline:com-chilipeppr-dev-workspace", ["chilipeppr_ready"], function()
          * and inits them.
          */
         init: function() {
-
+            var that = this;
+            
             // Most workspaces will instantiate the Serial Port JSON Server widget
             this.loadSpjsWidget();
             // Most workspaces will instantiate the Serial Port Console widget
@@ -68,7 +69,9 @@ cpdefine("inline:com-chilipeppr-dev-workspace", ["chilipeppr_ready"], function()
                 setTimeout(function() { $(window).trigger('resize'); }, 100);
             });
             
-            this.loadMeshesWidget();
+            this.load3DViewer(function(viewer) {
+                that.loadMeshesWidget();
+            })
             
             // Create our workspace upper right corner triangle menu
             this.loadWorkspaceMenu();
@@ -119,8 +122,21 @@ cpdefine("inline:com-chilipeppr-dev-workspace", ["chilipeppr_ready"], function()
          * Load the Meshes widget via chilipeppr.load() so folks have a sample
          * widget they can fork as a starting point for their own.
          */
+        load3DViewer: function(callback) {
+            var that = this;
+            chilipeppr.load("#3dviewer", "https://raw.githubusercontent.com/chilipeppr/widget-3dviewer/master/auto-generated-widget.html", function() {
+                cprequire(['inline:com-chilipeppr-widget-3dviewer'], function(viewer) {
+                    viewer.init();
+                    callback(viewer);
+                });
+            });
+        },
+        /**
+         * Load the Meshes widget via chilipeppr.load() so folks have a sample
+         * widget they can fork as a starting point for their own.
+         */
         loadMeshesWidget: function(callback) {
-
+            var that = this;
             chilipeppr.load(
                 "#myDivChOnlfaitChilipepprMeshesWidget",
                 "http://raw.githubusercontent.com/lautr3k/chilipeppr-meshes-widget/master/auto-generated-widget.html",
@@ -129,10 +145,12 @@ cpdefine("inline:com-chilipeppr-dev-workspace", ["chilipeppr_ready"], function()
                     // Now use require.js to get reference to instantiated widget
                     cprequire(
                         ["inline:ch-onlfait-chilipeppr-meshes-widget"], // the id you gave your widget
-                        function(myObjChOnlfaitChilipepprMeshesWidget) {
+                        function(myWidget) {
                             // Callback that is passed reference to the newly loaded widget
-                            console.log("Meshes widget. just got loaded.", myObjChOnlfaitChilipepprMeshesWidget);
-                            myObjChOnlfaitChilipepprMeshesWidget.init();
+                            console.log("Meshes widget. just got loaded.", myWidget);
+                            that.widgetMeshes = myWidget;
+                            that.widgetMeshes.init();
+                            callback(myWidget);
                         }
                     );
                 }
@@ -142,9 +160,7 @@ cpdefine("inline:com-chilipeppr-dev-workspace", ["chilipeppr_ready"], function()
          * Load the Serial Port JSON Server widget via chilipeppr.load()
          */
         loadSpjsWidget: function(callback) {
-
             var that = this;
-
             chilipeppr.load(
                 "#com-chilipeppr-widget-serialport-instance",
                 "http://fiddle.jshell.net/chilipeppr/vetj5fvx/show/light/",
