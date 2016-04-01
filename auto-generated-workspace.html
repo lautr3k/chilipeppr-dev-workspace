@@ -219,7 +219,7 @@ cpdefine("inline:com-chilipeppr-dev-workspace", ["chilipeppr_ready"], function()
             chilipeppr.load("#3dviewer", "https://raw.githubusercontent.com/chilipeppr/widget-3dviewer/master/auto-generated-widget.html", function() {
                 cprequire(['inline:com-chilipeppr-widget-3dviewer'], function(viewer) {
                     viewer.init();
-                    callback(viewer);
+                    callback && callback(viewer);
                 });
             });
         },
@@ -242,7 +242,7 @@ cpdefine("inline:com-chilipeppr-dev-workspace", ["chilipeppr_ready"], function()
                             console.log("Meshes widget. just got loaded.", myWidget);
                             that.widgetMeshes = myWidget;
                             that.widgetMeshes.init();
-                            callback(myWidget);
+                            callback && callback(myWidget);
                         }
                     );
                 }
@@ -343,6 +343,7 @@ cpdefine("inline:com-chilipeppr-dev-workspace", ["chilipeppr_ready"], function()
 </head>
 
 <body>
+    <div id="3dviewer"></div>
 
     <div id="com-chilipeppr-widget-flash-instance"></div>
 
@@ -392,7 +393,6 @@ cpdefine("inline:com-chilipeppr-dev-workspace", ["chilipeppr_ready"], function()
 
                 <!-- Center Column -->
                 <div class="col-md-5 col-pad10">
-                    <div id="3dviewer"></div>
                 </div>
 
                 <!-- Right Column -->

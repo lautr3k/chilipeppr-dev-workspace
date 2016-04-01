@@ -127,7 +127,7 @@ cpdefine("inline:com-chilipeppr-dev-workspace", ["chilipeppr_ready"], function()
             chilipeppr.load("#3dviewer", "https://raw.githubusercontent.com/chilipeppr/widget-3dviewer/master/auto-generated-widget.html", function() {
                 cprequire(['inline:com-chilipeppr-widget-3dviewer'], function(viewer) {
                     viewer.init();
-                    callback(viewer);
+                    callback && callback(viewer);
                 });
             });
         },
@@ -150,7 +150,7 @@ cpdefine("inline:com-chilipeppr-dev-workspace", ["chilipeppr_ready"], function()
                             console.log("Meshes widget. just got loaded.", myWidget);
                             that.widgetMeshes = myWidget;
                             that.widgetMeshes.init();
-                            callback(myWidget);
+                            callback && callback(myWidget);
                         }
                     );
                 }
