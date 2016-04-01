@@ -124,6 +124,9 @@ cpdefine("inline:com-chilipeppr-dev-workspace", ["chilipeppr_ready"], function()
          */
         load3DViewer: function(callback) {
             var that = this;
+            
+            $('body').prepend('<div id="3dviewer"></div>');
+
             chilipeppr.load("#3dviewer", "https://raw.githubusercontent.com/chilipeppr/widget-3dviewer/master/auto-generated-widget.html", function() {
                 cprequire(['inline:com-chilipeppr-widget-3dviewer'], function(viewer) {
                     viewer.init();
