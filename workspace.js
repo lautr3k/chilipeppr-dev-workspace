@@ -139,7 +139,7 @@ cpdefine("inline:com-chilipeppr-dev-workspace", ["chilipeppr_ready"], function()
             var that = this;
             chilipeppr.load(
                 "#myDivChOnlfaitChilipepprMeshesWidget",
-                "http://raw.githubusercontent.com/lautr3k/chilipeppr-meshes-widget/master/auto-generated-widget.html",
+                "https://raw.githubusercontent.com/lautr3k/chilipeppr-meshes-widget/master/auto-generated-widget.html",
                 function() {
                     // Callback after widget loaded into #myDivChOnlfaitChilipepprMeshesWidget
                     // Now use require.js to get reference to instantiated widget
