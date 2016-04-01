@@ -71,7 +71,7 @@ cpdefine("inline:com-chilipeppr-dev-workspace", ["chilipeppr_ready"], function()
             
             this.load3DViewer(function(viewer) {
                 that.loadMeshesWidget();
-            })
+            });
             
             // Create our workspace upper right corner triangle menu
             this.loadWorkspaceMenu();
